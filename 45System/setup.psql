@@ -1,0 +1,22 @@
+CREATE TABLE IF NOT EXISTS found_secrets(user_id VARCHAR, name VARCHAR);
+CREATE TABLE IF NOT EXISTS messages(user_id VARCHAR UNIQUE, count BIGINT);
+CREATE TABLE IF NOT EXISTS balance(user_id VARCHAR, cardid VARCHAR, balance BIGINT, type INT, expires BIGINT);
+CREATE TABLE IF NOT EXISTS shards(user_id VARCHAR UNIQUE, shards INT);
+CREATE TABLE IF NOT EXISTS cash(user_id VARCHAR UNIQUE, cash BIGINT);
+CREATE TABLE IF NOT EXISTS cooldown(name VARCHAR, user_id VARCHAR, ends_at BIGINT);
+CREATE TABLE IF NOT EXISTS job(user_id VARCHAR UNIQUE, skills INT, job VARCHAR);
+CREATE TABLE IF NOT EXISTS tools(user_id VARCHAR, item VARCHAR, type VARCHAR, durability INT);
+CREATE TABLE IF NOT EXISTS items(user_id VARCHAR, item VARCHAR, count INT);
+CREATE TABLE IF NOT EXISTS wmaterials(user_id VARCHAR, item VARCHAR, count INT);
+CREATE TABLE IF NOT EXISTS crates(user_id VARCHAR, crate_id VARCHAR, count INT);
+CREATE TABLE IF NOT EXISTS discovered(user_id VARCHAR, material VARCHAR);
+CREATE TABLE IF NOT EXISTS invites (code VARCHAR UNIQUE, inviter_id VARCHAR, uses INT);
+
+CREATE UNIQUE INDEX IF NOT EXISTS idx_found_secrets ON found_secrets(user_id, name);
+CREATE UNIQUE INDEX IF NOT EXISTS idx_tools ON tools(user_id, type);
+CREATE UNIQUE INDEX IF NOT EXISTS idx_cooldown ON cooldown(name, user_id);
+CREATE UNIQUE INDEX IF NOT EXISTS idx_balance ON balance (user_id, cardid);
+CREATE UNIQUE INDEX IF NOT EXISTS idx_items ON items (user_id, item);
+CREATE UNIQUE INDEX IF NOT EXISTS idx_wmaterials ON wmaterials (user_id, item);
+CREATE UNIQUE INDEX IF NOT EXISTS idx_crates ON crates (user_id, crate_id);
+CREATE UNIQUE INDEX IF NOT EXISTS idx_discovered ON discovered (user_id, material);

@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "cpu-percentage": "^1.0.3",
+    "discord-buttons": "^3.2.1",
+    "discord.js": "^12.5.3",
+    "moment": "^2.29.1",
+    "pg": "^8.6.0",
+    "seedrandom": "^3.0.5",
+    "yaml": "^1.10.2"
+  }
+}

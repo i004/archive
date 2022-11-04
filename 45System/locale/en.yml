@@ -1,0 +1,164 @@
+lang:
+  name: 'en'
+  fullName: 'English'
+  emoji: '🇬🇧'
+
+error:
+  error: "Error"
+  unknown: 'An error occurred while executing this command'
+  unknown__desc: "Traceback:```js\n{error}```"
+  unknown_subcommand: 'Available subcommands'
+  im_sorry: 'I''m sorry, but...'
+  no_perms: 'You don''t have required permissions to execute this command. You need the **{perm}** permission to run this command.'
+  cooldown: 'This command is on cooldown. Retry in **{t}**'
+  permissions:
+    manage_guild: 'Manage Guild'
+
+values:
+  confirm: 'Confirm'
+  cancel: 'Cancel'
+  cancelled: 'Cancelled'
+  none: 'None'
+
+help:
+  ping:
+    help: 'Bot ping'
+  stats:
+    help: 'Bot statistics'
+  help:
+    help: 'Command reference'
+    args:
+      - name: "[command]"
+        desc: "The command for which you want help."
+  cast:
+    args:
+      - name: "<tag>"
+        desc: "Tag"
+
+messages:
+  foundShard:
+    title: '<:shard:854357851773992990> You found 1 shard!'
+    description: 'Shards will be dropped with a small chance for activity in the general chat, as well as a bonus in the `daily` command.'
+
+commands:
+  help:
+    unknownCommand: "The command you specified was not found.\nIf you don't remember the command name, see the list of available commands in `help` command."
+    commandInfo:
+      info: '`{command}`'
+      descriptionNotSet: '[Description not set]'
+      args: 'Arguments'
+    categories:
+      base_commands: 'Base commands'
+      fun: 'Fun'
+      eco: 'Economy'
+    detailedCommandInfoTip: 'Use `help [command]` to get detailed information about specific command'
+    availableCommands: 'Available commands'
+  stats:
+    lib: "Library"
+    stats: "Statistics"
+    host: "Technical information"
+    members: "Members"
+    uptime: "Uptime"
+  cast:
+    specifyTag: "Please, specify the tag"
+    unknownTag: "Unknown tag."
+  card:
+    notExists: 'You don''t have a card. Register it with `card register`'
+    cardInfo: 'Card information'
+    expiryDate: 'Expires'
+    balance: 'Balance'
+    type: 'Type'
+    number: 'Number'
+  card_register:
+    alreadyExists: 'You already have a card.'
+    registered: 'Successfully registered the card.'
+    registering: '<a:loading:847884047433596938> Regsitering...'
+  daily:
+    claimed: 'You claimed your daily reward of **{shards}**<:shard:854357851773992990> **{coins}**<:45coins:853533949938499625>'
+  pay:
+    specifyArg: 'Specify the card number and amount you want to transfer to this card.'
+    unknownCard: 'Unknown card. Make sure that card number matches this format: `XXXX-YYYY-ZZZZ`'
+    minAmount: 'Minimum transfer amount - **5**<:45coins:853533949938499625>'
+    confirm: |
+      Are you sure that you want to transfer **{amount}**<:45coins:853533949938499625> to this card?
+      Warning: We will not be able to refund your money if you entered wrong card number.
+      
+      > Comission: **{comission}%**
+      > Transfer amount: **{amount}**<:45coins:853533949938499625>
+      > To pay: **{toPay}**<:45coins:853533949938499625>
+      {note}
+    note: '-{i}% of the commission as a bonus for **{type}** card'
+    notEnoughMoney: 'Not enough money'
+    transferred: 'Successfully transferred **{amount}**<:45coins:853533949938499625> to this card'
+  work:
+    claimed: 'You got **{coins}**<:45coins:853533949938499625> from work'
+    noJob: 'You have no job. You can join job using `job join`. Available jobs - `job list`'
+  train:
+    trained: "You trained and improved your skills by **{n}**\n> Current skill: **{t}**"
+    unsuccessful: 'You have tried to train but couldn''t learn anything new.'
+  job:
+    job: 'Job'
+    skill: 'Skill'
+    earnings: 'Earnings'
+    earnings_v: '~**{coins}**<:45coins:853533949938499625>/hour'
+    jobs:
+      programmer: 'Programmer'
+      scientist: 'Scientist'
+      firefighter: 'Firefighter'
+      police: 'Police'
+      teacher: 'Teacher'
+      cashier: 'cashier'
+      courier: 'courier'
+      janitor: 'Janitor'
+  job_list:
+    title: 'Jobs'
+    job_info: |
+      Earnings: ~**{avg}**<:45coins:853533949938499625>/час
+      Required skill: **{skills}**
+    tip: 'Use `job join <job ID>` to join a job'
+  job_join:
+    specifyJob: 'Please specify the job'
+    notEnoughSkill: 'Not enough skills. (required {req}, your skill: {tot})'
+    joined: 'You have successfully changed your job to **{job}**'
+  card_upgrade:
+    select: |
+      __Select the type of card you want to buy__
+
+      > <:greenCard:853611720621686795> **Premium - 500<:45coins:853533949938499625>**
+      > • Reduced commission from 6% to 3%
+      > • Ability to register up to 5 cards
+      > • Ability to re-generate card number
+      >  
+      > <:blueCard:853611720923807805> **Ultimate - 1000<:45coins:853533949938499625>**
+      > • Premium card features
+      > • Reduced commission from 6% to 2%
+      > • Workshop discounts for certain items
+      
+      Please note that the cost of renewing the card will be the same as the cost of the privilege you bought.
+      You can cancel your privilege when renewing your card.
+    notEnoughMoney: 'Not enough money.'
+    upgraded: 'Your card has been successfully updated to **{type}**'
+  mysterybox:
+    specifyAmount: 'Please specify amount.'
+    close: 'Close'
+    title: '**Mysterious Box** | You put **{coins}**<:45coins:853533949938499625>.'
+    currentWinnings: 'Your current winnings: **{coins}**<:45coins:853533949938499625>'
+    lose: ':boom: You hit a bomb and lost everything!'
+    won: 'You won **{coins}**<:45coins:853533949938499625>'
+    notEnoughMoney: 'Not enough money'
+    minMax: 'Specify the amount between 10 and 1000.'
+  roleplay:
+    try:
+      text: '_{user} {action}:_ **{state}**'
+      successful: 'Successful'
+      fail: 'Fail'
+    shout:
+      text: '_{user} shouts_: **{text}**'
+    whisper:
+      text: '_{user} whispers: {text}_'
+  profile:
+    title: 'Your profile'
+    cards: 'Cards'
+    bankBalance: 'Total card balance'
+    cash: 'Cash'
+    shards: 'Shards'

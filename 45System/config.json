@@ -1,0 +1,16 @@
+{
+    "prefix": "!",
+    "token": "n3V3Rg0NnAG1v3Y0uuPnEVeR.g0nnal.3ty0udOwNneV3Rg0NNarUnAR0un",
+    "modules": [
+        "./ext/events",
+        "./ext/baseCommands",
+        "./ext/funCommands",
+        "./ext/debugCommands",
+        "./ext/utils",
+        "./ext/economy"
+    ],
+    "developers": [
+        "817112856331943996", "319050081795964928"
+    ],
+    "connection_uri": "postgresql://deez:nuts@localhost:5432/deeznuts"
+}
