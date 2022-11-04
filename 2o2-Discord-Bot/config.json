@@ -1,0 +1,15 @@
+{
+    "tokens": { "bot": "n3V3Rg0NnAG1v3Y0uuPnEVeR.g0nnal.3ty0udOwNneV3Rg0NNarUnAR0un" },
+    "database": {
+        "host": "127.0.0.1",
+        "database": "...",
+        "user": "...",
+        "password": "...",
+        "port": ...
+    },
+    "api": {
+        "owm": "..."
+    },
+    "dbSetupFile": "assets/setup.psql",
+    "guildId": "..."
+}

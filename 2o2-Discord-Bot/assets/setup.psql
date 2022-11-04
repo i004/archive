@@ -1,0 +1,23 @@
+CREATE TABLE IF NOT EXISTS ditters (cid VARCHAR UNIQUE, uid VARCHAR, name VARCHAR, topic VARCHAR, last_message_at INT, karma_allowed BOOL DEFAULT TRUE);
+CREATE TABLE IF NOT EXISTS ditter_options (cid VARCHAR UNIQUE, repost_from BOOL DEFAULT TRUE, repost_to BOOL DEFAULT TRUE);
+CREATE TABLE IF NOT EXISTS ditter_plugins (cid VARCHAR, plugin VARCHAR, imported_at BIGINT);
+CREATE TABLE IF NOT EXISTS ditter_left (cid VARCHAR, uid VARCHAR);
+
+CREATE UNIQUE INDEX IF NOT EXISTS ditter_left_idx ON ditter_left(cid, uid);
+
+CREATE TABLE IF NOT EXISTS karma (uid VARCHAR UNIQUE, message FLOAT DEFAULT 0, reputation FLOAT DEFAULT 0, extra FLOAT DEFAULT 0);
+CREATE TABLE IF NOT EXISTS karma_change (id SERIAL, uid VARCHAR, type VARCHAR, old_value FLOAT, change FLOAT, timestamp BIGINT, reason VARCHAR, rid VARCHAR);
+
+CREATE TABLE IF NOT EXISTS stickers (id VARCHAR UNIQUE, uid VARCHAR, name VARCHAR, description VARCHAR, external BOOL, created_at BIGINT, asset_url VARCHAR, imported_id VARCHAR, used INT DEFAULT 0);
+
+CREATE TABLE IF NOT EXISTS stats (uid VARCHAR UNIQUE, messages INT DEFAULT 0, thread_messages INT DEFAULT 0, file_messages INT DEFAULT 0, reactions INT DEFAULT 0, stars INT DEFAULT 0);
+CREATE TABLE IF NOT EXISTS meta (uid VARCHAR UNIQUE, locale VARCHAR, last_online_at BIGINT, last_message_at BIGINT);
+
+CREATE TABLE IF NOT EXISTS cities (uid VARCHAR UNIQUE, lat FLOAT, lon FLOAT, city VARCHAR, country VARCHAR, localized_city VARCHAR, greeter_enabled BOOL DEFAULT FALSE, last_greet_at INT DEFAULT 0, tz_offset BIGINT DEFAULT 0);
+CREATE TABLE IF NOT EXISTS profile (uid VARCHAR UNIQUE, color VARCHAR, bio VARCHAR, banner VARCHAR, fields VARCHAR, options VARCHAR);
+
+CREATE TABLE IF NOT EXISTS starboard (mid VARCHAR UNIQUE, cid VARCHAR, sid VARCHAR, uid VARCHAR);
+CREATE TABLE IF NOT EXISTS feedback (id SERIAL, mid VARCHAR UNIQUE, uid VARCHAR);
+
+CREATE TABLE IF NOT EXISTS cooldown (id VARCHAR UNIQUE, timestamp BIGINT);
+CREATE TABLE IF NOT EXISTS counters (id VARCHAR UNIQUE, value INT);
