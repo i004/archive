@@ -1,5 +1,5 @@
 # archive
-My old projects lol
+Archive of some of my old abandoned projects
 
 These projects are available for anyone to marvel at how much they suck or use pieces of code as examples. 
 
