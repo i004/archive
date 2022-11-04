@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#117a65">
+    <meta property="og:title" content="XChat Beta">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="/static/auth.style.css">
+
+    <script src="/static/src/auth/index.js"></script>
+
+    <title>XChat</title>
+</head>
+<body>
+    <div class="container">
+        <div class="inner">
+            <form action="/authorize" method="post">
+                <h2>Authorization</h2>
+
+                <hr>
+
+                <label for="key">Username</label><br>
+                <div class="input">
+                    <input type="text" name="username" id="username" value="<%= auth[0] %>" required minlength="2" maxlength="32"><br>
+                </div>
+
+                <br>
+
+                <label for="key">Key</label><br>
+                <div class="input">
+                    <input type="password" name="key" id="key" value="<%= auth[1] %>" required>
+                    <button onclick="generateRandomKey();return false" title="Random Key"><span class="material-symbols-outlined">refresh</span></button>
+                </div><br>
+
+                <hr>
+
+                <div class="info">
+                    <span class="material-symbols-outlined">help</span> Accounts are not stored server-side. We use username and key to generate public ID, which can be used to verify that the account is yours.
+                </div>
+
+                <hr>
+
+                <input type="submit" value="Authorize">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

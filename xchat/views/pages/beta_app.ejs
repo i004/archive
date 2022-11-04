@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#117a65">
+    <meta property="og:title" content="XChat Beta">
+
+    <link rel="stylesheet" href="/static/style/root.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script>
+    <script dfer src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.10/purify.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.18/marked.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+
+    <script src="/static/src/api/objects.js"></script>
+    <script src="/static/src/api/client.js"></script>
+    <script src="/static/src/ui/util.js"></script>
+    <script src="/static/src/ui/app.js"></script>
+    <script src="/static/src/ui/events.js"></script>
+    <script defer src="/static/src/ui/contextmenu.js"></script>
+    <script defer src="/static/src/ui/modal.js"></script>
+    <script defer src="/static/src/ui/slashcommands.js"></script>
+    <script defer src="/static/src/ui/markdown.js"></script>
+
+    <title>XChat</title>
+</head>
+<body>
+    <div class="contextmenu" id="contextmenu"></div>
+    <div class="modal-outer"><div class="modal-inner"><div class="modal"></div></div></div>
+    <div class="container">
+        <div class="container-inner">
+            <div class="group-list">
+                <ul class="groups" id="groups">
+                    <li class="group home current" data-group-name="Home" data-group-id="0"><span class="material-symbols-outlined">home</span></li>
+                    <li class="group sb add" data-group-name="Add Group"><span class="material-symbols-outlined">add_circle</span></li>
+                    <li class="group sb settings" data-group-name="Settings"><span class="material-symbols-outlined">settings</span></li>
+                </ul>
+            </div>
+            <div class="group-container">
+                <div class="group-container-inner group-messages">
+                    <base target="_blank">
+                        <ul class="messages" id="messages"></ul>
+                    </base>
+                    <div class="message-input">
+                        <div class="message-input-inner">
+                            <textarea id="message-input-textarea" maxlength="2000"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="group-container-inner group-members">
+                    <span id="member-text">Members — 0</span>
+                    <ul class="members" id="members"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

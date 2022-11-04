@@ -1,0 +1,9 @@
+{
+    "port": 6900,
+    "database": {
+        "user": "rickastley",
+        "password": "nevergonnagiveyouup",
+        "database": "deeznuts",
+        "setupScript": "setup.psql"
+    }
+}

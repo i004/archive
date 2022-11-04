@@ -1,0 +1,34 @@
+CREATE SCHEMA IF NOT EXISTS groups;
+CREATE SCHEMA IF NOT EXISTS users;
+
+CREATE TABLE IF NOT EXISTS groups.list (
+    id VARCHAR UNIQUE,
+    name VARCHAR,
+    data JSONB
+);
+
+CREATE TABLE IF NOT EXISTS groups.messages (
+    id VARCHAR UNIQUE,
+    group_id VARCHAR,
+    data JSONB
+);
+
+CREATE TABLE IF NOT EXISTS groups.members (
+    id VARCHAR,
+    group_id VARCHAR,
+    data JSONB
+);
+
+CREATE TABLE IF NOT EXISTS users.list (
+    id VARCHAR UNIQUE,
+    private_id VARCHAR UNIQUE,
+    data JSONB
+);
+
+CREATE TABLE IF NOT EXISTS users.sessions (
+    id VARCHAR UNIQUE,
+    private_id VARCHAR,
+    hashed_ip VARCHAR,
+    useragent VARCHAR,
+    created_at BIGINT
+);

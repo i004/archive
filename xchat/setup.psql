@@ -1,0 +1,17 @@
+CREATE SCHEMA IF NOT EXISTS groups;
+CREATE TABLE IF NOT EXISTS groups.list (id VARCHAR UNIQUE, name VARCHAR, owner_pid VARCHAR, created_at BIGINT, typ VARCHAR);
+CREATE TABLE IF NOT EXISTS groups.messages (id VARCHAR UNIQUE, group_id VARCHAR, created_at BIGINT, content VARCHAR, author_pid VARCHAR, author_name VARCHAR, flags JSONB, edited_at BIGINT);
+CREATE TABLE IF NOT EXISTS groups.members (group_id VARCHAR, id VARCHAR, group_name VARCHAR, username VARCHAR);
+CREATE TABLE IF NOT EXISTS groups.permissions (group_id VARCHAR, user_id VARCHAR, permissions JSONB);
+
+CREATE UNIQUE INDEX IF NOT EXISTS groups_members_idx ON groups.members (group_id, id);
+CREATE UNIQUE INDEX IF NOT EXISTS groups_permissions_idx ON groups.permissions (group_id, user_id);
+
+-- system groups
+INSERT INTO groups.list VALUES ('0', 'limbo', '0', 0) ON CONFLICT DO NOTHING;
+INSERT INTO groups.list VALUES ('1', 'public', '0', 0) ON CONFLICT DO NOTHING;
+
+INSERT INTO groups.permissions VALUES ('0', '*', '{ "SEND_MESSAGES": false, "VIEW_OLDER_MESSAGES": false }') ON CONFLICT DO NOTHING;
+INSERT INTO groups.permissions VALUES ('1', '*', '{ "VIEW_OLDER_MESSAGES": false }') ON CONFLICT DO NOTHING;
+INSERT INTO groups.permissions VALUES ('2', '*', '{ "SEND_MESSAGES": false }') ON CONFLICT DO NOTHING;
+INSERT INTO groups.permissions VALUES ('-1', '*', '{ "SEND_MESSAGES": false }') ON CONFLICT DO NOTHING;

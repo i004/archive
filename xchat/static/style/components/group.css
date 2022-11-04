@@ -1,0 +1,84 @@
+
+.groups {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.groups .group {
+    display: table;
+    
+    width: 55px;
+    height: 55px;
+    
+    max-width: 55px;
+    max-height: 55px;
+    
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    background-color: #222;
+
+    cursor: pointer;
+    transition: .1s background-color, .2s border-radius;
+
+    padding: 5px;
+}
+
+.groups .group:hover {
+    background-color: #2f2f2f;
+    border-radius: 30%;
+}
+
+.groups .group:after {
+    content: attr(data-group-name);
+    position: fixed;
+    background-color: #1a1a1b;
+    color: #fff;
+    font-size: 1rem;
+    padding: 10px;
+    margin-top: 7px;
+    margin-left: 10px;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s;
+}
+
+.groups .group:hover:after {
+    visibility: visible;
+    opacity: 1;
+}
+
+.groups .group.current {
+    font-weight: bold;
+    background: #2f2f2f;
+    border-radius: 30%;
+}
+
+.groups .group.sb {
+    color: #315da0;
+}
+
+.groups .group.sb span, .groups .group.home span {
+    font-size: 2rem;
+}
+
+.groups .group.sb:hover {
+    background-color: #315da0;
+    color: #fff;
+    border-radius: 30%;
+}
+
+.groups .group span {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+
+    width: 55px;
+    max-width: 55px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}

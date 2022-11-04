@@ -1,0 +1,29 @@
+.contextmenu {
+    position: fixed;
+    z-index: 10;
+    width: 200px;
+    background: #1a1a1b;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+}
+
+.contextmenu.visible {
+    display: block;
+}
+
+.contextmenu .ctxitem {
+    padding: 8px 10px;
+    color: #eee;
+    cursor: pointer;
+    border-radius: inherit;
+}
+
+.contextmenu .ctxitem.title {
+    pointer-events: none;
+    font-weight: bold;
+}
+
+.contextmenu .ctxitem:hover {
+    background: #343434;
+}
