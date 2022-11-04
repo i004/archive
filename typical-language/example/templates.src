@@ -1,0 +1,31 @@
+requires std;
+
+template MyTemplate {
+    declare name<String>;
+    method sayHi();
+
+    declare optional asd<Int>;
+    optional method qwe();
+}
+
+object MyObject uses MyTemplate {
+    declare name<String>;
+
+    method init(name<String>) {
+        this.name = name;
+    }
+    method sayHi() {
+        std.output("Hello, " + this.name);
+    }
+}
+
+object Program {
+    method main() {
+        declare name<String>;
+
+        -> "Enter your name: ";
+        name = std.input(true);
+
+        new MyObject(name).sayHi();
+    }
+}

@@ -1,0 +1,53 @@
+requires std;
+
+object MyError uses ErrorTemplate { /* leave this blank */ }
+
+object Program {
+    method error () {
+        2 + "h"; // it will error!
+    }
+
+    method throwError () {
+        !> "This is an error!";
+    }
+
+    method throwCustomError () {
+        MyError.throw("This is an error with custom name!");
+    }
+
+    method main () {
+        // `.except` accepts both string and lambdas
+        // If you specified string it accepts additional argument `stop`
+        // if `stop` argument is set to `true` then the method will stop from running
+        // If you specified lambda, you can use `return` to stop method from running
+
+        this.error()
+            .except("Something went wrong with `this.error()`!"); 
+                
+        this.throwError()
+            .except(!(err<Error>) {
+                std.output("`this.throwError()` errored with " + err.toString());
+                // `err.toString()` returns string like `Error: Message`
+            })
+
+        this.throwCustomError()
+            .except(!(err<Error>) {
+                std.output("`this.throwCustomError()` errored with " + err.format());
+                // `err.format()` returns error message with stack
+                // You can use `err.output()` to output formatted error message, with docs and additional instructions
+                // the error message will look like this:
+                /*
+                    a/b/c/example.src:10
+
+                        "2" + 2
+                            ^
+                           here
+                    
+                    TypeError: String does not support operation "+" with type Int.
+                    
+                    Convert String to Int using conversion operator:
+                        ("2" -> Int)
+                */
+            })
+    }
+}

@@ -1,0 +1,15 @@
+requires std;
+
+declare const topLevelConst = "hello world";
+
+object Program {
+    method main() {
+        -> topLevelConst;
+        
+        declare const number = 123;
+
+        -> number + number;
+
+        number++; // error
+    }
+}

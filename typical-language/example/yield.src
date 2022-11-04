@@ -1,0 +1,15 @@
+requires std;
+
+object Program {
+    method calculate(a<Int>, b<Int>) {
+        -> "a+b is " + (a+b);
+        -> "a*b is " + (a*b);
+        -> "a/b is " + (a/b);
+        -> "a^b is " + (a**b);
+    }
+
+    method main() {
+        this.calculate(2, 2).iter().each
+            |> std.output($);
+    }
+}

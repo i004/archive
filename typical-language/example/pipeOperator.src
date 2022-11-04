@@ -1,0 +1,22 @@
+object Program {
+    method addTwo(number<Int>) {
+        return number + 2;
+    }
+
+    method multiplyByTwo(number<Int>) {
+        return number * 2;
+    }
+
+    method main() {
+        declare myNumber = 2;
+
+        -> this.addTwo(this.multiplyByTwo(myNumber)); // 6
+
+        -> myNumber |> this.multiplyByTwo() |> this.addTwo(); // 6
+
+        // Works with special methods too!
+        // by default String.split requires initialization, but you can use it in pipe operator
+
+        -> "Hello World" |> String.split(); // ["Hello", "World"]
+    }
+}

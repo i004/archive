@@ -1,0 +1,23 @@
+requires std;
+
+package Program {
+    declare type CustomBool = Bool | "true" | "false" | 1 | 0;
+
+    method isBoolean(arg<CustomBool>) {
+        return arg && arg != "false";
+    }
+
+    method main() {
+        declare example<CustomBool> = true;
+
+        -> "true: " + this.isBoolean(example);
+        -> "false: " + this.isBoolean(false);
+        -> "1: " + this.isBoolean(1);
+        -> "0: " + this.isBoolean(0);
+        -> "\"true\": " + this.isBoolean("true");
+        -> "\"false\": " + this.isBoolean("false");
+        
+        example = 123; // will error
+        this.isBoolean(123); // will error too
+    }
+}

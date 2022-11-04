@@ -1,0 +1,17 @@
+[package]
+name = "typical_language"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+fancy-regex = "0.7.0"
+colored = "2.0.0"
+if_chain = "1.0.1"
+strsim = "0.10.0"
+criterion = "0.3"
+lazy_static = "1.4.0"
+
+[[bench]]
+name = "lexer_benchmark"
+harness = false
+# path = "src/benches/my_benchmark.rs"

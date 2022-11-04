@@ -1,0 +1,19 @@
+requires std;
+package greeter;
+
+public template GreeterTemplate {
+    declare name<String>;
+    method sayHi() -> void;
+}
+
+public object Greeter uses GreeterTemplate {
+    declare name<String>;
+    
+    method init(name<String>) {
+        this.name = name;
+    }
+
+    method sayHi() {
+        std.output("Hello, " + this.name);
+    }
+}

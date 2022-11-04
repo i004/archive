@@ -1,0 +1,7 @@
+requires std;
+
+object Program {
+    method main() {
+        -> "Hello World!";
+    }
+}

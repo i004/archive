@@ -1,0 +1,30 @@
+template ExampleTemplate {
+    declare number<Int>;
+    declare text<String>;
+}
+
+object Test uses ExampleTemplate { // everything is ok
+    declare number = 123;
+    declare text = "hello world";
+}
+
+extend ExampleTemplate { // all new objects will need to implement toString method
+    method toString() -> String;
+}
+
+object ExampleObject uses ExampleTemplate { // if we won't implement toString method, it will error
+    method toString() -> String {
+        return "text=" + self.text + ", number=" + self.number;
+    }
+}
+
+object ExampleObject2 {
+    method print() {
+        std.output(this.toString());
+    }
+}
+template ExampleTemplate2 {}
+
+extend ExampleTemplate2 with ExampleTemplate; // ExampleTemplate2 will get all variables and methods from ExampleTemplate
+extend ExampleTemplate2 with ExampleObject2; // ExampleTemplate2 will get all methods from ExampleObject2
+// ExampleTemplate2 will now require to implement variables number<Int> and text<String>, and methods .toString() and .print()
