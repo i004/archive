@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "canvas": "^2.8.0",
+    "cpu-percentage": "^1.0.3",
+    "discord.js": "github:discordjs/discord.js#pull/5674/head",
+    "file-type": "^16.5.0",
+    "general-search-engine": "^1.4.0",
+    "get-image-colors": "^1.1.1",
+    "glob": "^7.1.7",
+    "ipinfo": "^1.5.1",
+    "moment": "^2.29.1",
+    "node-fetch": "^2.6.1",
+    "node-virustotal": "^3.32.0",
+    "pg": "^8.6.0",
+    "scandir": "^0.0.4",
+    "tio.js": "^1.0.9",
+    "translatte": "^3.0.1",
+    "wikijs": "^6.2.1"
+  }
+}

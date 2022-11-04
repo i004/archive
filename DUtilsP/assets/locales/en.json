@@ -1,0 +1,130 @@
+{
+    "language": {
+        "name": "English",
+        "raw_emoji": ":flag_en:",
+        "emoji": "🇬🇧",
+        "code": "en"
+    },
+
+    "commandHelp": {
+        "help": "Nothing to see here.",
+        "ping": "Get bot's ping",
+        "prefix": "All bot's prefixes",
+        "calc": "Solve math expression",
+        "color": "View most common colors of image",
+        "google": "Search in Google",
+        "googleimage": "Search in Google Images",
+        "hastebin": "Upload a text on https://hastebin.com",
+        "remind": "Create a reminder",
+        "reminders": "View your reminders",
+        "sandbox": "Execute a code in a sandbox. (supports over 681 programming languages)",
+        "shorten": "Shorten the link",
+        "translate": "Translate the text",
+        "weather": "Get weather in specific location",
+        "wikipedia": "Search for something in Wikipedia",
+        "language": "Manage bot's language",
+        "daysuntil": "Calculate how many days are left until a certain date",
+        "whois": "Get information about IP or website"
+    },
+
+    "errors.unknownError": "An error occurred while executing the command.",
+
+    "values.cancelled": "Cancelled",
+    "values.yes": "Yes",
+    "values.no": "No",
+    "values.cancel": "Cancel",
+
+    "help.unknownCommand": "Unknown command",
+    "help.noDescription": "[no description]",
+    "help.pages.info": "**Help** | **Bot information**\n`DUtils+` contains some random utilities, such as `calc`, `translate`, `sandbox` and so on.\nThe main purpose of this bot is to have many different utilities that may come in handy someday. For example, you can search for something in Google directly in Discord without opening browser, or, execute any code you want in safe sandbox (supports over 681 programming languages!)\n\n**Uptime:** {uptime}\n**Guilds:** {guilds}\n\nRun `help <command>` to get detailed command information",
+    "help.pages.commands": "**Help** | **Commands**\n```\n{commands}```\nRun `help <command>` to get detailed command information",
+    "help.pages.prefixes": "**Help** | **Prefixes**\n```\n{prefixes}```",
+    "help.button.info": "Information",
+    "help.button.commands": "Commands",
+    "help.button.prefixes": "Prefixes",
+    "help.button.inviteBot": "Invite the bot",
+
+    "ping.fetching": "Fetching...",
+    "ping.api_status": "Discord API status",
+    "ping.api_ping": "Discord API ping",
+
+    "calc.noArgument": "Please, specify the math expression you want to solve.",
+    "calc.easter_egg.responses": [
+        "I see you have some problems with math. Jeez",
+        "I see you have some problems with math. Get gud at maths",
+        "I see you have some problems with math. Didn't you learn math at school?"
+    ],
+    "calc.easter_egg": "{response}\nAnyways here's the answer if you need it: {result}",
+
+    "color.noArgument": "Please, specify image URL or attach an image.",
+    "color.invalidImage": "Please, specify **valid** image URL or attach an image.\nSupported image types: `png`, `jpeg`, `gif`",
+
+    "google.noArgument": "Please, specify the query.",
+    "google.dailyQuota": "Daily quota of 100 requests reached",
+    "google.error": "Something went wrong (status code {code})",
+    "google.nothingFound": "Nothing found",
+
+    "hastebin.noArgument": "Please, specify the text you want upload to hastebin.",
+
+    "remind.noArgument": "Please, specify reminder time and reminder text.",
+    "remind.invalidTime": "Invalid reminder time.",
+    "remind.specifyTime": "Please specify reminder time.",
+    "remind.added": "I have added your reminder, you will be reminded about it in **{time}**",
+    
+    "reminders.noReminders": "You do not have any reminders.",
+    "reminders.howToRemove": "Click <:delete:859832771698622465> to delete this reminder",
+    "reminders.in": "In {time}",
+    "reminders.removed": "Reminder **#{id}** was successfully removed.",
+    "reminders.confirmDeletion": "Are you sure that you want to delete that reminder?",
+
+    "sandbox.noArgument": "Please, specify the programming language and the code you want to execute.",
+    "sandbox.unknownLang": "Unknown programming language.",
+    "sandbox.timeout": "Timed out.",
+    "sandbox.tooLongOutput": "Output was too long so I put it here: https://hastebin.com/{key}",
+
+    "shorten.noArgument": "Please, specify link you want to shorten.",
+    "shorten.errors": {
+        "invalid": "Please enter a valid link to shorten",
+        "already_exists": "The shortened URL you picked already exists, please choose another.",
+        "too_short": "Short URLs must be at least 5 characters long.",
+        "blacklist": "Sorry, the URL you entered is on our internal blacklist. It may have been used abusively in the past, or it may link to another URL redirection service.",
+        "unknown": "Something went wrong"
+    },
+    
+    "translate.noArgument": "Please, specify the text you want to translate and the language.",
+    "translate.unknownLanguage": "Unknown language - `{lang}`",
+    "translate.tooBig": "The translated text was too long so I put it here: https://hastebin.com/{key}",
+
+    "weather.noArgument": "Please, specify the location whose weather you want to know",
+    "weather.invalidCoords": "Latitude and longitude must be a number.",
+    "weather.specifyCoords": "Please specify latitude and longitude",
+    "weather.specifyLocation": "Please specify the city or coordinates",
+    "weather.unknown": "Unknown city/country",
+    "weather.error": "Something went wrong (status code {code})",
+    "weather.title": "Weather in {name}",
+    "weather.temp": "Temperature",
+    "weather.wind": "Wind",
+    "weather.humidity": "Humidity",
+    
+    "wiki.noArgument": "Please, specify the article.",
+    "wiki.unknownLang": "Unknown language - `{lang}`",
+    "wiki.notFound": "No article found",
+    "wiki.moreInfo": "More info",
+
+    "language.currentLanguage": "Current language: **{emoji} {name}**",
+    "language.howToChange": "Click any button on this message to change bot's language.",
+    "language.changed": "Bot language was successfully changed to **{emoji} {name}**",
+
+    "daysuntil.noArgument": "Please, specify the date",
+    "daysuntil.invalidFormat": "The date must be in format `DD.MM.YYYY` or `DD/MM/YYYY`",
+
+    "whois.noArgument": "Please, specify the website",
+    "whois.invalid": "Invalid domain/IP",
+    "whois.unknown": "[unknown]",
+    "whois.fieldValues.location": "Continent: **{continent}**\nCity: **{country}**, **{city}** (**{regionName}**)\nCoordinates: `{lat}`, `{lon}`",
+    "whois.fieldValues.domain": "ISP: **{isp}**\nOrganization: **{org}**\nAS: **{as}**",
+    "whois.fieldValues.ip": "Mobile?: **{mobile}**\nProxy?: **{proxy}**\nHosting?: **{hosting}**",
+    "whois.fields.location": "Location",
+    "whois.fields.domain": "Domain",
+    "whois.fields.dns": "DNS records"
+}

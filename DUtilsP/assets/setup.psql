@@ -1,0 +1,2 @@
+CREATE TABLE IF NOT EXISTS reminders (reminder_id SERIAL, user_id VARCHAR, channel_id VARCHAR, expires BIGINT, text VARCHAR, message_uri VARCHAR, created_at BIGINT, locale VARCHAR DEFAULT 'en');
+CREATE TABLE IF NOT EXISTS locales (guild_id VARCHAR UNIQUE, locale VARCHAR DEFAULT 'en');

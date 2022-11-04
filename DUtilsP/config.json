@@ -1,0 +1,33 @@
+{
+    "token": "n3V3Rg0NnAG1v3Y0uuPnEVeR.g0nnal.3ty0udOwNneV3Rg0NNarUnAR0un",
+    "test_guild": "858639659348525056",
+    "channels": {
+        "error_log": "858640364050055218",
+        "server_log": "859874380589694976"
+    },
+    "developers": ["755478865454956604"],
+    "sudoers": ["755478865454956604"],
+    "prefixes": [
+        "dp.",
+        "dp!",
+        "dp ",
+        "dpls ",
+        "d pls ",
+        "util.",
+        "util!",
+        "ddo ",
+        "d do "
+    ],
+    "activity": {
+        "type": "LISTENING",
+        "name": "dp help"
+    },
+    "tokens": {
+        "OWM": "",
+        "googleSearch": "",
+        "virusTotal": ""
+    },
+    "database": {
+        "connectionURI": "postgresql://deez:nuts@localhost:5432/deeznuts"
+    }
+}
